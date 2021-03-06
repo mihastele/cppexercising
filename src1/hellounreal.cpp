@@ -45,7 +45,7 @@ bool guessed_numbers(int *expected, int *actual)
 
 bool game_turn()
 {
-    string string;
+    string str;
 
     int number1 = rand() % 5 + 1;
     int number2 = rand() % 5 + 1;
@@ -56,13 +56,18 @@ bool game_turn()
 
     cout << "the three numebrs together are summed up to " << sum << " and multiplied to " << mul << endl;
     cout << "Guess the numbers, write them with spaces followed by at least a space" << endl;
-    cin >> string;
+    cin >> str;
 
     int guessed1, guessed2, guessed3;
-    guessed1 = stoi(string.substr(0, string.find(" ")));
-    guessed2 = stoi(string.substr(1, string.find(" ")));
-    guessed3 = stoi(string.substr(2, string.find(" ")));
-    cout << "DEBUG " << guessed1 << " " << guessed2 << " " << guessed3 << " " << endl;
+    int pos = 0;
+
+    string del = " ";
+    guessed1 = stoi(str.substr(0, str.find(" ", pos)));
+    str.erase(0, pos + del.length());
+    guessed2 = stoi(str.substr(0, str.find(" ", pos)));
+    str.erase(0, pos + del.length());
+    guessed3 = stoi(str.substr(0, str.find(" ", pos)));
+    str.erase(0, pos + del.length());
 
     // cout << "Your guess are the following numbers " << guessed1 << " "
     // << guessed2 << " " << guessed3 << endl;
