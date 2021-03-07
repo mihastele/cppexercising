@@ -37,9 +37,11 @@ bool guessed_numbers(int *expected, int *actual)
 
         if (expected[i] != INT_MIN)
         {
-            cout << "You have guess wrong and now you died...";
+            cout << "You have guess wrong and now you died..." << endl;
             return true;
         }
+
+        cout << "Correct, let's give you another challenge" << endl << endl;
     }
 
     return false;
@@ -54,7 +56,7 @@ bool game_turn()
     long sum = number1 + number2 + number3;
     long mul = number1 * number2 * number3;
 
-    cout << "the three numebrs together are summed up to " << sum << " and multiplied to " << mul << endl;
+    cout << "the three numbers together are summed up to " << sum << " and multiplied to " << mul << endl;
     cout << "Guess the numbers, write them with spaces" << endl;
 
     int guessed1, guessed2, guessed3;
