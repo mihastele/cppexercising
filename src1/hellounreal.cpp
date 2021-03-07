@@ -72,6 +72,14 @@ bool game_turn()
     return guessed_numbers(expected, actual);
 }
 
+
+int gameOverScreen(){
+    char gg;
+    cout << endl << "Game over, write your last words and press Enter" << endl;
+    cin >> gg;
+    return 0;
+}
+
 int main()
 {
 
@@ -88,10 +96,10 @@ int main()
     {
         if (game_turn())
         {
-            return 0;
+            return gameOverScreen();
         }
         ++turn;
     }
 
-    return 0;
+    return gameOverScreen();
 }
