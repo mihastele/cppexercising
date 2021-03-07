@@ -50,7 +50,7 @@ bool game_turn()
     int number1 = rand() % 5 + 1;
     int number2 = rand() % 5 + 1;
     int number3 = rand() % 5 + 1;
-    cout << "DEBUG " << number1 << " " << number2 << " " << number3 << " " << endl;
+    /* cout << "DEBUG " << number1 << " " << number2 << " " << number3 << " " << endl; */
     long sum = number1 + number2 + number3;
     long mul = number1 * number2 * number3;
 
@@ -83,14 +83,17 @@ int gameOverScreen(){
 int main()
 {
 
-    const char *ime = "Miha Stele";
+    /* const char *ime = "Miha Stele";
     cout << "Hello"
          << " " << ime;
     cout << endl
          << endl
-         << endl;
+         << endl; */ 
 
     // Simple game
+
+
+    srand( (unsigned)time(NULL) ); // Initialize random seed
     short turn = 0;
     while (turn < 10)
     {
